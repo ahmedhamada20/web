@@ -60,13 +60,13 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="our-partners-ltr.html">@lang('home.Partners')</a>
+                                    <a href="{{route('ourPartners')}}">@lang('home.Partners')</a>
                                 </li>
                                 <li>
-                                    <a href="our-clients-ltr.html">@lang('home.Clients')</a>
+                                    <a href="{{route('ourClients')}}">@lang('home.Clients')</a>
                                 </li>
                                 <li>
-                                    <a href="contact-ltr.html">@lang('home.Contact')</a>
+                                    <a href="{{route('contact')}}">@lang('home.Contact')</a>
                                 </li>
                                 <li>
                                     <a href="{{ LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale() == 'ar' ? 'en' : 'ar') }}">
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                         <div class="btn-box">
-                            <a href="contact-ltr.html" class="theme-btn">@lang('home.Get_In_Touch')</a>
+                            <a href="{{route('contact')}}" class="theme-btn">@lang('home.Get_In_Touch')</a>
                         </div>
                     </div>
                 </div>

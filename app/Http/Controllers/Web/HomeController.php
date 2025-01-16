@@ -15,4 +15,17 @@ class HomeController extends Controller
     {
         return view('web.aboutUs');
     }
+    public function ourPartners()
+    {
+        return view('web.ourPartners');
+    }
+    public function ourClients()
+    {
+        return view('web.ourClients');
+    }
+
+    public function contact()
+    {
+        return view('web.contact');
+    }
 }

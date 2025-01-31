@@ -2,7 +2,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-<title>IBright | لحلول تكنولوجيا المعلومات</title>
+<title>
+    {{ isset( get_setting()['website_name']) ? json_decode(get_setting()['website_name'], true)[app()->getLocale()] : '' }}
+</title>
 
 <!-- Fav Icon -->
 <link rel="icon" href="{{asset('assets/images/favicon-3.ico')}}" type="image/x-icon">

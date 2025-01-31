@@ -19,15 +19,15 @@
                 <div class="col-lg-5 col-md-12 col-sm-12 content-column">
                     <div class="content-box">
 
-                        <h2>نضيء حياتك بالتقنية</h2>
+                        <h2>{{get_sliders()->name()}}</h2>
                         <div class="btn-box">
-                            <a href="about.html" class="theme-btn btn-eleven">المزيد</a>
+                            <a href="{{get_sliders()->link}}" class="theme-btn btn-eleven">@lang('home.More')</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-12 col-sm-12 image-column">
                     <div class="image-box">
-                        <figure class="image js-tilt"><img src="{{asset('assets/images/banner/banner-18.png')}}" alt=""></figure>
+                        <figure class="image js-tilt"><img src="{{ asset('storage/' . get_sliders()->photo?->filename) }}" alt=""></figure>
                     </div>
                 </div>
             </div>
@@ -40,65 +40,34 @@
     <section class="service-style-eight centred">
         <div class="auto-container">
             <div class="sec-title style-two">
-                <h5>لماذا تختار أيبرايت</h5>
-                <h2>خدمات متكاملة بكفاءة عالية</h2>
+                <h5>@lang('home.choose_Ebright')</h5>
+                <h2>@lang('home.Integrated_services_with_high_efficiency')</h2>
                 <div class="divider" style="background-image: url({{asset('assets/images/icons/divider-1.png')}});"></div>
             </div>
             <div class="row clearfix">
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-eight wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="pattern-layer">
-                                <div class="pattern-1" style="background-image: url({{asset('assets/images/shape/shape-75.png')}});"></div>
-                                <div class="pattern-2" style="background-image: url({{asset('assets/images/shape/shape-76.png')}});"></div>
-                            </div>
-                            <div class="icon-box">
-                                <div class="shape" style="background-image: url({{asset('assets/images/shape/shape-72.png')}});"></div>
-                                <figure class="icon"><img src="{{asset('assets/images/icons/icon-27.png')}}" alt=""></figure>
-                            </div>
-                            <div class="text">
-                                <h3><a href="#">خبرة موثوقة</a></h3>
-                                <p>سنوات من الابتكار في تكنولوجيا الموارد البشرية والدهانات</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-eight wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="pattern-layer">
-                                <div class="pattern-1" style="background-image: url({{asset('assets/images/shape/shape-75.png')}});"></div>
-                                <div class="pattern-2" style="background-image: url({{asset('assets/images/shape/shape-76.png')}});"></div>
-                            </div>
-                            <div class="icon-box">
-                                <div class="shape" style="background-image: url({{asset('assets/images/shape/shape-73.png')}});"></div>
-                                <figure class="icon"><img src="{{asset('assets/images/icons/icon-28.png')}}" alt=""></figure>
-                            </div>
-                            <div class="text">
-                                <h3><a href="#">فريق متميز</a></h3>
-                                <p>متخصصون في كل قطاع لضمان جودة خدماتنا</p>
+                @foreach(get_choose_ebright() as  $index => $row)
+                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-eight wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="pattern-layer">
+                                    <div class="pattern-1" style="background-image: url({{asset('assets/images/shape/shape-75.png')}});"></div>
+                                    <div class="pattern-2" style="background-image: url({{asset('assets/images/shape/shape-76.png')}});"></div>
+                                </div>
+                                <div class="icon-box">
+                                    <div class="shape" style="background-image: url({{ asset('assets/images/shape/shape-' . (72 + $index) . '.png') }});"></div>
+                                    <figure class="icon"><img src="{{ asset('storage/' . $row?->photo?->filename) }}" alt=""></figure>
+                                </div>
+                                <div class="text">
+                                    <h3><a href="#">{{$row->name()}}</a></h3>
+                                    <p>
+                                        {{$row->notes()}}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-eight wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="pattern-layer">
-                                <div class="pattern-1" style="background-image: url({{asset('assets/images/shape/shape-75.png')}});"></div>
-                                <div class="pattern-2" style="background-image: url({{asset('assets/images/shape/shape-76.png')}});"></div>
-                            </div>
-                            <div class="icon-box">
-                                <div class="shape" style="background-image: url({{asset('assets/images/shape/shape-74.png')}});"></div>
-                                <figure class="icon"><img src="assets/images/icons/icon-29.png" alt=""></figure>
-                            </div>
-                            <div class="text">
-                                <h3><a href="#">شغف بالتطوير</a></h3>
-                                <p>مستمرون في البحث والتطوير لتقديم أفضل الحلول</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>
@@ -115,9 +84,9 @@
                         <div class="counter-block-three">
                             <div class="inner-box">
                                 <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="1500" data-stop="45">0</span>
+                                    <span class="count-text" data-speed="1500" data-stop="{{get_setting()['completed_projects']}}">0</span>
                                 </div>
-                                <h4>المشاريع المنجزة</h4>
+                                <h4>@lang('home.completed_projects')</h4>
                             </div>
                         </div>
                     </div>
@@ -125,9 +94,9 @@
                         <div class="counter-block-three">
                             <div class="inner-box">
                                 <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="1500" data-stop="15">0</span>
+                                    <span class="count-text" data-speed="1500" data-stop="{{get_setting()['effective_projects']}}">0</span>
                                 </div>
-                                <h4>المشاريع الفعالة</h4>
+                                <h4>@lang('home.effective_projects')</h4>
                             </div>
                         </div>
                     </div>
@@ -135,9 +104,9 @@
                         <div class="counter-block-three">
                             <div class="inner-box">
                                 <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="1500" data-stop="5">0</span>
+                                    <span class="count-text" data-speed="1500" data-stop="{{get_setting()['average_years_of_experience']}}">0</span>
                                 </div>
-                                <h4>معدل سنين الخبرة</h4>
+                                <h4>@lang('home.average_years_of_experience')</h4>
                             </div>
                         </div>
                     </div>
@@ -154,30 +123,38 @@
             <div class="row align-items-center clearfix">
                 <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                     <div class="image-box">
-                        <figure class="image js-tilt"><img src="{{asset('assets/images/resource/about-6.png')}}" alt=""></figure>
+                        <figure class="image js-tilt"><img src="{{ isset(get_setting()['abouts_us_home_photo']) ? asset(get_setting()['abouts_us_home_photo']) : '' }}" alt=""></figure>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                     <div class="content_block_18">
                         <div class="content-box">
                             <div class="sec-title style-two">
-                                <h5>عن أيبرايت</h5>
-                                <h2>منشأة سعودية متكاملة تضم قطاعين رائدة في مجالات تكنولوجيا الموارد البشرية والدهانات المضيئة. نهدف إلى تقديم حلول مبتكرة تلبي احتياجات عملائنا في كل قطاع.</h2>
+                                <h5>@lang('home.about_Eyebright')</h5>
+                                <h2>
+                                    {{ isset( get_setting()['abouts_us_home']) ? json_decode(get_setting()['abouts_us_home'], true)[app()->getLocale()] : '' }}
+
+                                </h2>
                                 <div class="divider" style="background-image: url({{asset('assets/images/icons/divider-1.png')}});"></div>
                             </div>
                             <div class="text">
                                 <p>
-                                    أسسنا آيبرايت بأعلى مستويات الدقة والإتقان والمرونة لنقف بجانبك حتى تحصل على الحلول التقنية المناسبة لمشروعك واحتياجاتك.
+                                    {{ isset( get_setting()['abouts_us_home_notes']) ? json_decode(get_setting()['abouts_us_home_notes'], true)[app()->getLocale()] : '' }}
                                 </p>
                             </div>
                             <div class="inner-box">
                                 <div class="single-item">
                                     <div class="icon-box"><i class="fal fa-check-circle"></i></div>
-                                    <p>وتحظى شركتنا بثقة جهات رسمية متعددة في المملكة العربية السعودية في مجال الخدمات التقنية والمشاريع الجديدة مستدامة التطوير،  وذلك بعد نجاحنا في تقديم مجموعة واسعة من الخدمات التقنية المتقدمة في عدة جهات حكومية وشركات كبرى في مختلف المجالات.</p>
+                                    <p>
+                                        {{ isset( get_setting()['abouts_us_feature1']) ? json_decode(get_setting()['abouts_us_feature1'], true)[app()->getLocale()] : '' }}
+
+                                    </p>
                                 </div>
                                 <div class="single-item">
                                     <div class="icon-box"><i class="fal fa-check-circle"></i></div>
-                                    <p>سنكون إحدى الشركات الأقوى التي تتقدم المسيرة التقنية في المملكة العربية السعودية إلى أعالي القمم في ظل تحفيز ودعم قائدنا الملهِم ذو النظرة البعيدة لمستقبل التقنية السعودية الواعد عالمياً </p>
+                                    <p>
+                                        {{ isset( get_setting()['abouts_us_feature2']) ? json_decode(get_setting()['abouts_us_feature2'], true)[app()->getLocale()] : '' }}
+                                    </p>
 
                                 </div>
                             </div>
@@ -200,61 +177,23 @@
                 <div class="divider" style="background-image: url({{asset('assets/images/icons/divider-1.png')}});"></div>
             </div>
             <div class="row clearfix">
-                <div class="col-lg-3 col-md-6 col-sm-12 benefits-block">
-                    <div class="benefits-block-one wow fadeInLeft animated" data-wow-delay="600ms" data-wow-duration="1500m">
-                        <div class="arrow-shape" style="background-image: url({{asset('assets/images/icons/arrow-2.png')}});"></div>
-                        <div class="inner-box">
-                            <figure class="icon-box"><img src="{{asset('assets/images/icons/icon-30.png')}}" alt=""></figure>
-                            <span>01</span>
-                            <p>وجود الخبرات الاستشارية و الإدارية والتقنية والبرمجية والتسويقية والتصميمية التي تساهم في نجاح مشروعك</p>
+                @foreach(get_services() as $index => $row)
+                    <div class="col-lg-3 col-md-6 col-sm-12 benefits-block">
+                        <div class="benefits-block-one wow fadeInLeft animated" data-wow-delay="600ms" data-wow-duration="1500m">
+                            <div class="arrow-shape" style="background-image: url({{ asset('assets/images/icons/arrow-' . (2 + $index) . '.png') }});"></div>
+                            <div class="inner-box">
+                                <figure class="icon-box"><img src="{{ asset('storage/' . $row?->photo?->filename) }}" alt=""></figure>
+                                <span>0{{$index+1}}</span>
+                                <p>
+                                    {{$row->name()}}
+                                </p>
 
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 benefits-block">
-                    <div class="benefits-block-one wow fadeInLeft animated" data-wow-delay="400ms" data-wow-duration="1500m">
-                        <div class="arrow-shape" style="background-image: url({{asset('assets/images/icons/arrow-3.png')}});"></div>
-                        <div class="inner-box">
-                            <figure class="icon-box"><img src="{{asset('assets/images/icons/icon-31.png')}}" alt=""></figure>
-                            <span>02</span>
-                            <p>الإلمام بمجال العمل بشكل عالي الجودة وينعكس ذلك على آلية عملنا وجودة خدماتنا.</p>
+                @endforeach
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 benefits-block">
-                    <div class="benefits-block-one wow fadeInLeft animated" data-wow-delay="200ms" data-wow-duration="1500m">
-                        <div class="arrow-shape" style="background-image: url(assets/images/icons/arrow-4.png);"></div>
-                        <div class="inner-box">
-                            <figure class="icon-box"><img src="assets/images/icons/icon-32.png" alt=""></figure>
-                            <span>03</span>
-                            <p>تحري الدقة القصوى في متطلبات ورغبات العميل في تنفيذ المشروع</p>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 benefits-block">
-                    <div class="benefits-block-one wow fadeInLeft animated" data-wow-delay="00ms" data-wow-duration="1500m">
-                        <div class="arrow-shape" style="background-image: url(assets/images/icons/arrow-5.png);"></div>
-                        <div class="inner-box">
-                            <figure class="icon-box"><img src="assets/images/icons/icon-33.png" alt=""></figure>
-                            <span>04</span>
-                            <p>مرونة وسرعة الاستجابة للتعديلات حسب متطلبات العميل</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 benefits-block">
-                    <div class="benefits-block-one wow fadeInLeft animated" data-wow-delay="400ms" data-wow-duration="1500m">
-                        <div class="arrow-shape" style="background-image: url(assets/images/icons/arrow-3.png);"></div>
-                        <div class="inner-box">
-                            <figure class="icon-box"><img src="assets/images/icons/icon-31.png" alt=""></figure>
-                            <span>05</span>
-                            <p>التسهيلات المالية بطريقة الدفعات الموزعة</p>
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

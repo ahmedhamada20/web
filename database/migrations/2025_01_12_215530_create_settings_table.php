@@ -13,22 +13,8 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('name_ar')->nullable();
-            $table->string('name_en')->nullable();
-            $table->string('logo')->nullable();
-            $table->text('description_ar')->nullable();
-            $table->text('description_en')->nullable();
-            $table->string('address_ar')->nullable();
-            $table->string('address_en')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('email')->nullable();
-            $table->string('facebook_url')->nullable();
-            $table->string('twitter_url')->nullable();
-            $table->string('instagram_url')->nullable();
-            $table->string('whatsapp_url')->nullable();
-            $table->string('location_lat')->nullable();
-            $table->string('location_lan')->nullable();
-            $table->json('columns')->nullable();
+            $table->string('key')->nullable();
+            $table->string('value')->nullable();
             $table->timestamps();
         });
     }

@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ChooseEbrightController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,18 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/auth.php';
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-
+Route::get('/',[AdminController::class,'index'])->name('admin');
+Route::get('/setting',[AdminController::class,'setting'])->name('admin.setting');
+Route::post('/setting/updated',[AdminController::class,'setting_updated'])->name('admin.setting_updated');
+Route::resource('sliders',SliderController::class);
+Route::resource('choose_ebright',ChooseEbrightController::class);
+Route::resource('service',ServiceController::class);

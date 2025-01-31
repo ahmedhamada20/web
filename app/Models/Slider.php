@@ -12,19 +12,17 @@ class Slider extends Model
     protected $fillable = [
         'name_ar',
         'name_en',
-        'logo',
-        'description_ar',
-        'description_en',
-        'button_url',
-        'columns',
+        'link',
     ];
+
 
     public function name()
     {
-        return App::getLocale() == "ar"  ? $this->name_ar : $this->name_en;
+        return App::getLocale() == "ar" ? $this->name_ar : $this->name_en;
     }
-    public function description()
+
+    public function photo()
     {
-        return App::getLocale() == "ar"  ? $this->description_ar : $this->description_en;
+        return $this->morphOne(Photo::class, 'photoable');
     }
 }

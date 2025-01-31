@@ -8,13 +8,13 @@
                 </div>
                 <div class="right-column pull-right">
                     <ul class="social-links clearfix">
-                        <li><a href="https://www.facebook.com/IBright-ksa-104729301979467/" target="_blank"><i
+                        <li><a href="{{get_setting()['facebook']}}" target="_blank"><i
                                     class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="https://twitter.com/iBrightksa?t=hUIk0NWii0U1VleA7M43Vw&s=09" target="_blank"><i
+                        <li><a href="{{get_setting()['twitter']}}" target="_blank"><i
                                     class="fab fa-twitter"></i></a></li>
-                        <li><a href="https://www.instagram.com/ibrightksa/?utm_medium=copy_link" target="_blank"><i
+                        <li><a href="{{get_setting()['instagram']}}" target="_blank"><i
                                     class="fab fa-instagram"></i></a></li>
-                        <li><a href="https://api.whatsapp.com/send/?phone=966582326172&text&app_absent=0"
+                        <li><a href="{{get_setting()['Whatsapp']}}"
                                target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                     </ul>
                     <div class="phone-box">
@@ -28,7 +28,7 @@
         <div class="auto-container">
             <div class="outer-box clearfix">
                 <div class="logo-box pull-left">
-                    <figure class="logo"><a href="{{route('home')}}"><img src="{{asset('assets/images/logo-3.png')}}" alt="" style="width: 144px !important;padding-left: 10px !important; " ></a></figure>
+                    <figure class="logo"><a href="{{route('home')}}"><img src="{{ isset(get_setting()['logo_image']) ? asset(get_setting()['logo_image']) : '' }}" alt="" style="width: 144px !important;padding-left: 10px !important; " ></a></figure>
                 </div>
                 <div class="menu-area pull-right clearfix">
                     <!--Mobile Navigation Toggler-->
@@ -112,7 +112,7 @@
         <div class="auto-container">
             <div class="outer-box clearfix">
                 <figure class="sticky-logo pull-left">
-                    <a href="{{route('home')}}"><img src="{{asset('assets/images/logo.png')}}" alt="" style="width: 203px;"></a>
+                    <a href="{{route('home')}}"><img src="{{ isset(get_setting()['logo_image_navbar']) ? asset(get_setting()['logo_image_navbar']) : '' }}" alt="" style="width: 203px;"></a>
                 </figure>
                 <div class="menu-area pull-right clearfix">
                     <nav class="main-menu clearfix">

@@ -36,7 +36,7 @@
             <div class="content-box">
                 <h1>شركاء النجاح</h1>
                 <ul class="bread-crumb clearfix">
-                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="{{route('home')}}">الرئيسية</a></li>
                     <li>شركاء النجاح</li>
                 </ul>
             </div>
@@ -51,30 +51,18 @@
         <div class="auto-container">
             <div class="row">
 
-                <div class="col-lg-3 col-md-4 col-12">
-                    <div class="box">
-                        <strong>
-                            ZKTeco
-                        </strong>
-                        <img src="{{asset('assets/images/partners/partner1.png')}}" alt="">
+                @foreach(get_partners() as $row)
+                    <div class="col-lg-3 col-md-4 col-12">
+                        <div class="box">
+                            <strong>
+                                {{$row->name()}}
+                            </strong>
+                            <img src="{{ asset('storage/' . $row?->photo?->filename) }}" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-12">
-                    <div class="box">
-                        <strong>
-                            Dronology
-                        </strong>
-                        <img src="{{asset('assets/images/partners/partner3.png')}}" alt="client-name">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-12">
-                    <div class="box">
-                        <strong>
-                            Uranus
-                        </strong>
-                        <img src="{{asset('assets/images/partners/partner2.png')}}" alt="client-name">
-                    </div>
-                </div>
+                @endforeach
+
+
 
             </div>
         </div>

@@ -2,6 +2,7 @@
 
 use App\Models\ChooseEbright;
 use App\Models\Package;
+use App\Models\Partner;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Slider;
@@ -35,5 +36,10 @@ if (!function_exists('get_work')){
 if (!function_exists('get_packages')){
     function get_packages(){
         return Package::get();
+    }
+}
+if (!function_exists('get_partners')){
+    function get_partners(){
+        return Partner::get();
     }
 }

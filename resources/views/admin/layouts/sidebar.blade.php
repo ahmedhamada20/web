@@ -45,6 +45,12 @@
                 <li>
                     <a href="{{route('package.index')}}" class="waves-effect"><i class="dripicons-arrow-thin-right"></i><span>خدمات</span></a>
                 </li>
+                <li>
+                    <a href="{{route('our-partners.index')}}" class="waves-effect"><i class="dripicons-arrow-thin-right"></i><span>شركاء النجاح</span></a>
+                </li>
+                <li>
+                    <a href="{{route('our-clients.index')}}" class="waves-effect"><i class="dripicons-arrow-thin-right"></i><span>عملاؤنا</span></a>
+                </li>
 {{--                <li class="has_sub">--}}
 {{--                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-archive"></i> <span> Advanced UI </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>--}}
 {{--                    <ul class="list-unstyled">--}}

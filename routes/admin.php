@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ChooseEbrightController;
+use App\Http\Controllers\Admin\OurClientsController;
+use App\Http\Controllers\Admin\OurpartnersController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\packagesDetailsController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -32,3 +34,5 @@ Route::resource('service',ServiceController::class);
 Route::resource('work',WorkController::class);
 Route::resource('package',PackageController::class);
 Route::resource('packagesDetails',packagesDetailsController::class);
+Route::resource('our-partners',OurpartnersController::class);
+Route::resource('our-clients',OurClientsController::class);

@@ -2,7 +2,7 @@
 return [
     'home' => 'Home',
     'About' => 'About',
-    'Services' => 'About',
+    'Services' => 'Services',
     'Partners' => 'Partners',
     'Clients' => 'Clients',
     'Contact' => 'Contact',
@@ -17,4 +17,10 @@ return [
     'effective_projects'=>'effective projects',
     'average_years_of_experience'=>'average years of experience',
     'about_Eyebright'=>'about Eyebright',
+    'Eyebright_features'=>'Eyebright features',
+    'Professional_technical_features'=>'Professional technical features',
+    'strategy'=>'strategy',
+    'how_we_work'=>'how we work',
+    'Simple_and_smooth_working_mechanism'=>'Simple and smooth working mechanism',
+
 ];

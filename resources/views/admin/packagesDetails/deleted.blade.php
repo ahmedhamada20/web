@@ -9,9 +9,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('choose_ebright.destroy','test')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('package.destroy','test')}}" method="post" enctype="multipart/form-data">
                     @method('DELETE')
                     @csrf
+
                     <input type="hidden" value="{{$row->id}}" name="id">
 
                     <div class="row">

@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ChooseEbrightController;
+use App\Http\Controllers\Admin\PackageController;
+use App\Http\Controllers\Admin\packagesDetailsController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\WorkController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +29,6 @@ Route::post('/setting/updated',[AdminController::class,'setting_updated'])->name
 Route::resource('sliders',SliderController::class);
 Route::resource('choose_ebright',ChooseEbrightController::class);
 Route::resource('service',ServiceController::class);
+Route::resource('work',WorkController::class);
+Route::resource('package',PackageController::class);
+Route::resource('packagesDetails',packagesDetailsController::class);

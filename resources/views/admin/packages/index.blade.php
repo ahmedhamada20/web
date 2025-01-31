@@ -25,7 +25,7 @@
 
 
                         <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">اضافه جديده</button>
-                        @include('admin.services.create')
+                        @include('admin.packages.create')
 
 
 
@@ -39,7 +39,7 @@
                             <th>الاسم بالعربي</th>
                             <th>الاسم بالانجليزي</th>
 
-                            <th>الصوره</th>
+
                             <th>العمليات</th>
                         </tr>
                         </thead>
@@ -51,18 +51,15 @@
                                 <td>{{$row->name_ar}}</td>
                                 <td>{{$row->name_en}}</td>
 
+
                                 <td>
-                                    @if($row->photo)
-                                        <img src="{{ asset('storage/' . $row?->photo?->filename) }}" width="80px" height="80px" alt="">
-                                    @endif
-                                </td>
-                                <td>
+                                    <a href="{{route('package.show',$row->id)}}" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
                                     <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal{{$row->id}}"><i class="fa fa-edit"></i></button>
                                     <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleted{{$row->id}}"><i class="fa fa-trash"></i></button>
                                 </td>
 
-@include('admin.services.edit')
-@include('admin.services.deleted')
+@include('admin.packages.edit')
+@include('admin.packages.deleted')
                             </tr>
                         @endforeach
 

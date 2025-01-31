@@ -25,7 +25,7 @@
 
 
                         <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">اضافه جديده</button>
-                        @include('admin.services.create')
+                        @include('admin.work.create')
 
 
 
@@ -61,8 +61,8 @@
                                     <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleted{{$row->id}}"><i class="fa fa-trash"></i></button>
                                 </td>
 
-@include('admin.services.edit')
-@include('admin.services.deleted')
+@include('admin.work.edit')
+@include('admin.work.deleted')
                             </tr>
                         @endforeach
 

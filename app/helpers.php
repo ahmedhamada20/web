@@ -1,9 +1,11 @@
 <?php
 
 use App\Models\ChooseEbright;
+use App\Models\Package;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Slider;
+use App\Models\Work;
 
 if (!function_exists('get_setting')){
     function get_setting(){
@@ -23,5 +25,15 @@ if (!function_exists('get_choose_ebright')){
 if (!function_exists('get_services')){
     function get_services(){
         return Service::get();
+    }
+}
+if (!function_exists('get_work')){
+    function get_work(){
+        return Work::get();
+    }
+}
+if (!function_exists('get_packages')){
+    function get_packages(){
+        return Package::get();
     }
 }

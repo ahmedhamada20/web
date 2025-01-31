@@ -24,8 +24,8 @@
                 <div class="card-body">
 
 
-                        <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">اضافه جديده</button>
-                        @include('admin.services.create')
+                    <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">اضافه جديده</button>
+                    @include('admin.packagesDetails.create')
 
 
 
@@ -39,30 +39,26 @@
                             <th>الاسم بالعربي</th>
                             <th>الاسم بالانجليزي</th>
 
-                            <th>الصوره</th>
+
                             <th>العمليات</th>
                         </tr>
                         </thead>
 
 
                         <tbody>
-                        @foreach($data as $row)
+                        @foreach($data->details as $row)
                             <tr>
                                 <td>{{$row->name_ar}}</td>
                                 <td>{{$row->name_en}}</td>
 
-                                <td>
-                                    @if($row->photo)
-                                        <img src="{{ asset('storage/' . $row?->photo?->filename) }}" width="80px" height="80px" alt="">
-                                    @endif
-                                </td>
+
                                 <td>
                                     <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal{{$row->id}}"><i class="fa fa-edit"></i></button>
                                     <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleted{{$row->id}}"><i class="fa fa-trash"></i></button>
                                 </td>
 
-@include('admin.services.edit')
-@include('admin.services.deleted')
+                                @include('admin.packagesDetails.edit')
+                                @include('admin.packagesDetails.deleted')
                             </tr>
                         @endforeach
 

@@ -172,8 +172,8 @@
         <div class="pattern-layer" style="background-image: url({{asset('assets/images/shape/shape-78.png')}});"></div>
         <div class="auto-container">
             <div class="sec-title style-two centred">
-                <h5>مميزات أيبرايت</h5>
-                <h2>مميزات تقنية احترافية</h2>
+                <h5>@lang('home.Eyebright_features')</h5>
+                <h2>@lang('home.Professional_technical_features')</h2>
                 <div class="divider" style="background-image: url({{asset('assets/images/icons/divider-1.png')}});"></div>
             </div>
             <div class="row clearfix">
@@ -264,7 +264,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                     <div class="image-box">
-                        <figure class="image js-tilt"><img src="assets/images/resource/illestration-3.png" alt=""></figure>
+                        <figure class="image js-tilt"><img src="{{ isset(get_setting()['quotes_photo']) ? asset(get_setting()['quotes_photo']) : '' }}" alt=""></figure>
                     </div>
                 </div>
             </div>
@@ -280,7 +280,7 @@
                 <div class="row clearfix">
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                         <div class="image-box">
-                            <figure class="image js-tilt"><img src="assets/images/resource/illestration-4.png" alt=""></figure>
+                            <figure class="image js-tilt"><img src="{{ isset(get_setting()['contact_photo']) ? asset(get_setting()['contact_photo']) : '' }}" alt=""></figure>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 content-column">

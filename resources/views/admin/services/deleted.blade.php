@@ -12,6 +12,7 @@
                 <form action="{{route('service.destroy','test')}}" method="post" enctype="multipart/form-data">
                     @method('DELETE')
                     @csrf
+                    <input type="hidden" value="{{$row->id}}" name="id">
 
                     <div class="row">
                         <div class="col">

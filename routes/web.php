@@ -24,5 +24,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
    Route::get('/our-partners', [HomeController::class, 'ourPartners'])->name('ourPartners');
    Route::get('/our-clients', [HomeController::class, 'ourClients'])->name('ourClients');
    Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+   Route::get('service-details/{id}', [HomeController::class, 'serviceDetails'])->name('serviceDetails');
 
 });

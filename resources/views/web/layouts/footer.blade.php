@@ -59,16 +59,14 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget links-widget ml-40">
                         <div class="widget-title">
-                            <h3>خدماتنا</h3>
+                            <h3>@lang('home.Services')</h3>
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                <li><a href="service-details.html">الأنظمة والخدمات العامة</a></li>
-                                <li><a href="service-details-2.html">الخدمات العامة التقنية</a></li>
-                                <li><a href="service-details-3.html">خدمات بناء وتطوير الأنظمة والتطبيقات والمواقع</a></li>
-                                <li><a href="service-details-4.html">منصة دوام - قطاع نظم الموارد البشرية</a></li>
-                                <li><a href="service-details-5.html">شركة الدهانات المضيئة</a></li>
-                                <li><a href="service-details-6.html">أعمدة الإنارة الذكية</a></li>
+                                @foreach(get_packages() as $row)
+                                    <li><a href="{{route('serviceDetails',$row->id)}}">{{$row->name()}}</a></li>
+
+                                @endforeach
                             </ul>
                         </div>
                     </div>

@@ -16,5 +16,10 @@ return [
     'effective_projects'=>'المشاريع الفعالة',
     'average_years_of_experience'=>'معدل سنين الخبرة',
     'Get_In_Touch'=>'تواصل معنا',
+    'Eyebright_features'=>'مميزات أيبرايت',
+    'Professional_technical_features'=>'مميزات تقنية احترافية',
     'about_Eyebright'=>'عن أيبرايت',
+    'strategy'=>'استراتيجيتنا',
+    'how_we_work'=>'كيف نعمل',
+    'Simple_and_smooth_working_mechanism'=>'آلية عمل سلسلة وبسيطة',
 ];

@@ -47,16 +47,13 @@
                                     <a href="{{route('aboutUs')}}">@lang('home.About')</a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="service-ltr.html">@lang('home.Services')</a>
+                                    <a href="#">@lang('home.Services')</a>
                                     <ul>
-                                        <li><a href="service-details-ltr.html">General systems and services</a></li>
-                                        <li><a href="service-details-ltr-2.html">General systems and services</a></li>
-                                        <li><a href="service-details-ltr-3.html">building and developing Services for
-                                                systems, applications and websites</a></li>
-                                        <li><a href="service-details-ltr-4.html">Dawam Platform - Human Resources
-                                                Systems Sector</a></li>
-                                        <li><a href="service-details-ltr-5.html">Luminous Paints Company</a></li>
-                                        <li><a href="service-details-ltr-6.html">Smart lighting poles</a></li>
+                                        @foreach(get_packages() as $row)
+                                            <li><a href="{{route('serviceDetails',$row->id)}}">{{$row->name()}}</a></li>
+
+                                        @endforeach
+
                                     </ul>
                                 </li>
                                 <li>
